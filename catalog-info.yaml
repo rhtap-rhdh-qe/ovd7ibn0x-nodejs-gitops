@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ovd7ibn0x-nodejs-gitops
+  description: This is GitOps manifest for ovd7ibn0x-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ovd7ibn0x-nodejs
+    backstage.io/kubernetes-id: ovd7ibn0x-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ovd7ibn0x-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ovd7ibn0x-nodejs
